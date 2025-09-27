@@ -2,38 +2,28 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Pendaftaran Jastip ASG</title>
+  <title>formulir - konsumen - Jastip ASG</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>📌 Pendaftaran Jastip ASG</h2>
-  
-  <form id="registerForm">
-    <label>Nama Lengkap:</label>
-    <input type="text" id="nama" required><br>
+  <h2>📝 Pendaftaran</h2>
+  <form action="dashboard.html">
+    <label>Nama: <input type="text" required></label><br>
+    <label>Nomor WA: <input type="text" required></label><br>
+    <label>Alamat: <textarea required></textarea></label><br>
+    
+    <h3>📜 Syarat & Ketentuan</h3>
+    <ol>
+      <li>Barang tidak dapat diretur atau ditolak dengan alasan apapun.</li>
+      <li>Ketidaksesuaian barang adalah tanggung jawab pembeli dan penjual. Kami hanya sebagai penyedia layanan (jastip).</li>
+      <li>Biaya jasa per paket normal Rp10.000. Barang besar/kargo: Rp15.000–Rp500.000 tergantung ukuran/berat.</li>
+      <li>Dilarang menyebarkan alamat kami tanpa izin.</li>
+      <li>Barang COD wajib dibayar lunas. Tidak menerima cicilan, tempo, atau hutang.</li>
+      <li>Kami tidak bertanggung jawab atas kerusakan/hilangnya barang selama pengiriman.</li>
+    </ol>
 
-    <label>Nomor WhatsApp:</label>
-    <input type="text" id="wa" required><br>
-
-    <label>Alamat Rumah:</label>
-    <input type="text" id="alamat" required><br>
-
-    <label>
-      <input type="checkbox" id="setuju" required> Saya setuju dengan syarat & ketentuan
-    </label><br><br>
-
-    <label>Pilih E-commerce:</label>
-    <select id="ecommerce" required>
-      <option value="">--Pilih--</option>
-      <option>Shopee</option>
-      <option>Tokopedia</option>
-      <option>TikTok Shop</option>
-      <option>Lazada</option>
-    </select><br><br>
-
-    <button type="submit">Daftar</button>
+    <label><input type="checkbox" required> Saya sudah membaca dan menyetujui syarat & ketentuan</label><br>
+    <button type="submit">Lanjut ➡️</button>
   </form>
-
-  <script src="script.js"></script>
 </body>
 </html>
