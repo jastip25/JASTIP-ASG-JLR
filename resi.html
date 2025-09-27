@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Lacak Resi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>📦 Lacak Resi</h2>
+  <input type="text" id="resi" placeholder="Masukkan nomor resi">
+  <button onclick="cekResi()">Cari</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function cekResi(){
+      let resi = document.getElementById("resi").value;
+      let hasil = document.getElementById("hasil");
+      if(resi === ""){
+        hasil.innerHTML = "⚠️ Nomor resi belum diisi!";
+      } else {
+        hasil.innerHTML = `
+          <ul>
+            <li>Barang diproses ✅</li>
+            <li>Dikirim 🚚</li>
+            <li>Transit 📍</li>
+            <li>Dalam perjalanan...</li>
+          </ul>`;
+      }
+    }
+  </script>
+</body>
+</html>
