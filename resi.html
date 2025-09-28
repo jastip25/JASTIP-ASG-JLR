@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Lacak Resi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lacak Resi - JASTIP ASG</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
     <h2>📦 Lacak Resi</h2>
-    <input type="text" id="resi" placeholder="Masukkan nomor resi">
-    <button onclick="cekResi()">Cari</button>
-    <div id="hasil"></div>
+    <input type="text" id="resiInput" placeholder="Masukkan nomor resi">
+    <button onclick="lacakResi()">Cari</button>
+
+    <div id="hasilResi" style="margin-top:14px;"></div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
