@@ -3,21 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Jastip ASG</title>
+  <title>Login Jastip ASG</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
-<body>
-  <div class="container">
-    <h2>🔐 Login Jastip ASG</h2>
-    <form id="loginForm">
-      <label>Username</label>
-      <input type="text" id="username" required>
-      <label>Email / No. WA</label>
-      <input type="text" id="email" required>
-      <button type="submit">Login</button>
-      <p>Belum punya akun? <a href="#" onclick="alert('Fitur pendaftaran akan ditambahkan nanti')">Daftar</a></p>
-    </form>
+<body class="login-page">
+
+  <div class="login-container">
+    <div class="login-card">
+      <h2>🔒 Login Jastip ASG</h2>
+      <p class="subtext">Masuk untuk melanjutkan layanan Jastip</p>
+
+      <form action="index.html" method="GET" class="login-form">
+        <label>Username</label>
+        <input type="text" placeholder="Masukkan username" required>
+
+        <label>Email / No. WA</label>
+        <input type="text" placeholder="Masukkan email atau nomor WA" required>
+
+        <button type="submit" class="btn-login">Masuk</button>
+      </form>
+
+      <p class="register-text">
+        Belum punya akun? <a href="daftar.html">Daftar</a>
+      </p>
+    </div>
   </div>
+
 </body>
 </html>
