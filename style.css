@@ -1,3 +1,70 @@
+/* Reset dasar */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: #16a34a;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.header p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 20px;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+}
+
+.menu-item span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 60px; /* beri jarak dari navbar bawah */
+}
+
 /* Bottom Navigation */
 .bottom-nav {
   position: fixed;
