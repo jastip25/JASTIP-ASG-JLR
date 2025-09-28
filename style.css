@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   background: #f5f7fa;
   margin: 0;
-  padding: 20px;
+  padding: 15px;
   color: #333;
 }
 
@@ -29,11 +29,16 @@ label {
 
 input, textarea, button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 16px; /* agak besar biar nyaman di HP */
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
 }
 
 input:focus, textarea:focus {
@@ -47,7 +52,7 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -63,4 +68,26 @@ ol {
 
 ol li {
   margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ✅ Responsive khusus HP (layar kecil) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  input, textarea, button {
+    font-size: 14px; /* lebih kecil biar pas di layar HP */
+    padding: 10px;
+  }
+
+  h2, h3 {
+    font-size: 18px;
+  }
 }
