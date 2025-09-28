@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,34 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulir - Konsumen - Jastip ASG</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #1a73e8;
+      margin-bottom: 15px;
+    }
+    .description {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: none;
+      border-radius: 8px;
+    }
+    @media (max-width: 600px) {
+      iframe {
+        height: 500px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>📝 Formulir Pendaftaran Konsumen JASTIPASG</h2>
-  <form action="dashboard.html">
-    <label>Nama Lengkap:</label>
-    <input type="text" required>
-
-    <label>Nomor WhatsApp:</label>
-    <input type="text" required>
-
-    <label>Alamat Lengkap:</label>
-    <textarea required></textarea>
-
-    <h3>📜 Syarat & Ketentuan</h3>
-    <ol>
-      <li>Barang tidak dapat diretur atau ditolak dengan alasan apapun.</li>
-      <li>Ketidaksesuaian barang adalah tanggung jawab pembeli dan penjual. Kami hanya sebagai penyedia layanan (jastip).</li>
-      <li>Biaya jasa per paket normal Rp10.000. Barang besar/kargo: Rp15.000–Rp500.000 tergantung ukuran/berat.</li>
-      <li>Dilarang menyebarkan alamat kami tanpa izin.</li>
-      <li>Barang COD wajib dibayar lunas. Tidak menerima cicilan, tempo, atau hutang.</li>
-      <li>Kami tidak bertanggung jawab atas kerusakan/hilangnya barang selama pengiriman.</li>
-    </ol>
-
-    <label>
-      <input type="checkbox" required> Saya sudah membaca dan menyetujui syarat & ketentuan
-    </label>
-
-    <button type="submit">Lanjut ➡️</button>
-  </form>
+  <div class="form-container">
+    <h2>📝 Formulir Pendaftaran Konsumen JASTIP ASG</h2>
+    <div class="description">
+      Selamat datang di JASTIP ASG! Silakan isi formulir ini dengan data lengkap dan benar.<br>
+      Data akan digunakan untuk memproses pesanan Anda dan disimpan di Google Sheets.<br>
+      Pastikan semua kolom wajib diisi dan centang persetujuan Syarat & Ketentuan.
+    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX9w4M2x1QR7Snz8Y8A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
 </body>
 </html>
