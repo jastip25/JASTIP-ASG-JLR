@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - JASTIPASG</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Ikon dari Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="login-page">
     <div class="login-container">
-      <h1>Selamat datang di <span style="color:#16a34a;">JASTIPASG</span></h1>
+      <h1>Selamat Datang di JASTIPASG</h1>
       <p>Silahkan login menggunakan akun pilihanmu</p>
 
       <div class="login-buttons">
-        <button class="login-btn" onclick="window.location.href='dasborad.html'">
-          <i class="fas fa-envelope icon"></i> Masuk dengan Email
+        <button class="login-btn google" onclick="loginEmail()">
+          <span class="icon">📧</span> Masuk dengan Email
         </button>
-        <button class="login-btn" onclick="window.location.href='dasborad.html'">
-          <i class="fas fa-phone icon"></i> Masuk dengan WhatsApp
+
+        <button class="login-btn fb" onclick="loginWA()">
+          <span class="icon">📞</span> Masuk dengan WhatsApp
         </button>
       </div>
 
-      <p class="terms">Dengan melanjutkan, kamu menyetujui <a href="#">syarat & ketentuan</a> kami.</p>
+      <p class="terms">
+        Dengan melanjutkan, Anda menyetujui <a href="#">syarat & ketentuan</a> serta <a href="#">kebijakan privasi</a> kami.
+      </p>
     </div>
   </div>
+
+  <script>
+    // Simulasi login
+    function loginEmail() {
+      window.location.href = "dasbord.html"; // pindah ke dashboard
+    }
+
+    function loginWA() {
+      window.location.href = "dasbord.html"; // pindah ke dashboard
+    }
+  </script>
 
 </body>
 </html>
