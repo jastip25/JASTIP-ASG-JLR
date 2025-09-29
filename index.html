@@ -5,44 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - JASTIPASG</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff, #f0f4ff);
+      color: #333;
+      padding: 40px 20px;
+    }
+    h1 {
+      margin-top: 80px;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px auto;
+      padding: 12px 20px;
+      width: 80%;
+      max-width: 300px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .login-btn:hover {
+      background: #0056b3;
+    }
+    .login-btn span {
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <!-- Halaman Login -->
-  <div class="login-page">
-    <div class="login-container">
-      <h1>Selamat datang di JASTIPASG</h1>
-      <p>Silahkan login menggunakan akun pilihanmu</p>
 
-      <div class="login-buttons">
-        <button class="login-btn" onclick="login('email')">
-          <span class="icon">📧</span>
-          Masuk dengan Email
-        </button>
+  <h1>Selamat datang di JASTIPASG</h1>
+  <p>Silahkan login menggunakan akun pilihanmu</p>
 
-        <button class="login-btn" onclick="login('whatsapp')">
-          <span class="icon">📞</span>
-          Masuk dengan WhatsApp
-        </button>
-      </div>
+  <a href="dashboard.html" class="login-btn">
+    <span>📧</span> Masuk dengan Email
+  </a>
 
-      <div class="terms">
-        <p>Dengan masuk, Anda menyetujui <a href="#">Syarat & Ketentuan</a> kami.</p>
-      </div>
+  <a href="dashboard.html" class="login-btn" style="background: #25D366;">
+    <span>📱</span> Masuk dengan WhatsApp
+  </a>
 
-      <div class="signup">
-        <p>Belum punya akun? <a href="#">Daftar Sekarang</a></p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Fungsi login
-    function login(method) {
-      // method bisa "email" atau "whatsapp"
-      // setelah klik login, arahkan ke dashboard utama
-      window.location.href = "dasbord.html";
-    }
-  </script>
 </body>
 </html>
