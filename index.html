@@ -1,82 +1,45 @@
-/* Halaman Login */
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #fff;
-  color: #000;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | JastipASG</title>
 
-.login-container {
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-}
+  <!-- Link ke file CSS -->
+  <link rel="stylesheet" href="style.css" />
 
-.login-container h1 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-.login-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  <!-- Halaman Login -->
+  <div class="login-page">
+    <div class="login-container">
+      <h1>Selamat Datang</h1>
+      <p>Masuk menggunakan akun pilihanmu</p>
 
-.login-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
+      <div class="login-buttons">
+        <button class="login-btn google">
+          <span class="icon">🌐</span>
+          Masuk dengan Google
+        </button>
 
-.login-btn:hover {
-  background: #eee;
-}
+        <button class="login-btn fb">
+          <span class="icon">📘</span>
+          Masuk dengan Facebook
+        </button>
+      </div>
 
-.login-btn.fb {
-  background: #1877f2;
-  color: #fff;
-  border: none;
-}
+      <div class="terms">
+        Dengan masuk, kamu menyetujui <a href="#">Syarat & Ketentuan</a> serta <a href="#">Kebijakan Privasi</a>.
+      </div>
 
-.login-btn.google {
-  background: #fff;
-  border: 1px solid #ccc;
-}
+      <div class="signup">
+        Belum punya akun? <a href="#">Daftar Sekarang</a>
+      </div>
+    </div>
+  </div>
 
-.login-btn .icon {
-  font-size: 1.2rem;
-}
-
-.terms {
-  font-size: 0.75rem;
-  color: #666;
-  margin-top: 25px;
-  line-height: 1.4;
-}
-
-.terms a {
-  color: #000;
-  text-decoration: underline;
-}
-
-.signup {
-  margin-top: 15px;
-  font-size: 0.9rem;
-}
-
-.signup a {
-  color: #ff004f;
-  font-weight: bold;
-  text-decoration: none;
-}
+</body>
+</html>
