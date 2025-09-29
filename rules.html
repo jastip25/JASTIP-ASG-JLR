@@ -3,27 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Pesanan Jastip</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Buku catatan paket</title>
   <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background: #f5f5f5;
-    }
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background: #f0f0f0; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>📋 Daftar Pesanan</h2>
+    <h2>📋 Buku catatan paket</h2>
     <table>
       <thead>
         <tr>
@@ -39,7 +31,7 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzfChx2nHhIgckiqtcOLSnwkGCfogyoRlDNENnABWCs5TF3vL28D93AYFLmWbD-kjj/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyNZ8UM8jp1HTyIrFtO8Hy07rZ_dMujRZ19FWpZobSbzL6sUBGJ5L4gsXyOTzCP9VE/exec";
     const tabelBody = document.getElementById('tabelData');
 
     fetch(SCRIPT_URL)
@@ -48,16 +40,12 @@
         tabelBody.innerHTML = "";
         data.forEach(row => {
           const tr = document.createElement('tr');
-
-          // Format tanggal
           const tanggal = new Date(row.tanggal).toLocaleDateString('id-ID');
-
           tr.innerHTML = `
             <td>${tanggal}</td>
             <td>${row.nama}</td>
             <td>${row.harga.toLocaleString('id-ID')}</td>
           `;
-
           tabelBody.appendChild(tr);
         });
       })
