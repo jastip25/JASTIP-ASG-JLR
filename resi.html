@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Lacak Resi - JASTIP ASG</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Cek Resi Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
-    <h2>📦 Lacak Resi</h2>
-    <input type="text" id="resiInput" placeholder="Masukkan nomor resi">
-    <button onclick="lacakResi()">Cari</button>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow p-6">
+    <h1 class="text-2xl font-bold text-center mb-4">📦 Cek Resi Pengiriman</h1>
 
-    <div id="hasilResi" style="margin-top:14px;"></div>
+    <form id="form-cek-resi" class="flex gap-2 mb-6">
+      <input 
+        type="text" 
+        id="input-resi" 
+        placeholder="Masukkan nomor resi" 
+        class="flex-1 border rounded-lg p-2"
+        required
+      >
+      <button 
+        type="submit" 
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+        Cek
+      </button>
+    </form>
+
+    <div id="hasil"></div>
   </div>
 
   <script src="script.js"></script>
