@@ -3,68 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pembukuan Jastip ASG</title>
+  <title>Daftar Pesanan Jastip</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f5f5f5;
+    }
+  </style>
 </head>
 <body>
-  <div class="container form-container">
-    <h2>📊 Pembukuan Jastip ASG</h2>
-    <form id="pembukuanForm">
-      <label>Nama:</label>
-      <input type="text" id="nama" required>
-
-      <label>Barang:</label>
-      <input type="text" id="barang" required>
-
-      <label>Jumlah:</label>
-      <input type="number" id="jumlah" required>
-
-      <label>Harga (Rp):</label>
-      <input type="number" id="harga" required>
-
-      <button type="submit">Simpan ke Google Sheet</button>
-    </form>
-
-    <p id="status"></p>
-
-    <a href="dashboard.html" class="btn-back">⬅️ Kembali</a>
+  <div class="container">
+    <h2>📋 Daftar Pesanan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Nama</th>
+          <th>Harga (Rp)</th>
+        </tr>
+      </thead>
+      <tbody id="tabelData">
+        <tr><td colspan="3">⏳ Memuat data...</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <script>
-    const form = document.getElementById('pembukuanForm');
-    const statusText = document.getElementById('status');
-
-    // URL Web App kamu dari Google Apps Script
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxzfChx2nHhIgckiqtcOLSnwkGCfogyoRlDNENnABWCs5TF3vL28D93AYFLmWbD-kjj/exec";
+    const tabelBody = document.getElementById('tabelData');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    fetch(SCRIPT_URL)
+      .then(res => res.json())
+      .then(data => {
+        tabelBody.innerHTML = "";
+        data.forEach(row => {
+          const tr = document.createElement('tr');
 
-      const data = {
-        nama: document.getElementById('nama').value,
-        barang: document.getElementById('barang').value,
-        jumlah: document.getElementById('jumlah').value,
-        harga: document.getElementById('harga').value
-      };
+          // Format tanggal
+          const tanggal = new Date(row.tanggal).toLocaleDateString('id-ID');
 
-      statusText.textContent = "⏳ Mengirim data...";
+          tr.innerHTML = `
+            <td>${tanggal}</td>
+            <td>${row.nama}</td>
+            <td>${row.harga.toLocaleString('id-ID')}</td>
+          `;
 
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+          tabelBody.appendChild(tr);
+        });
       })
-      .then(() => {
-        statusText.textContent = "✅ Data berhasil disimpan!";
-        form.reset();
-      })
-      .catch(() => {
-        statusText.textContent = "❌ Gagal menyimpan data.";
+      .catch(err => {
+        tabelBody.innerHTML = `<tr><td colspan="3">❌ Gagal memuat data</td></tr>`;
+        console.error(err);
       });
-    });
   </script>
 </body>
 </html>
