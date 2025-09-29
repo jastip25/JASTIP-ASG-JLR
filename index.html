@@ -3,41 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | JastipASG</title>
-
-  <!-- Link ke file CSS -->
+  <title>Login - JASTIPASG</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Poppins Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Ikon dari Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Halaman Login -->
   <div class="login-page">
     <div class="login-container">
-      <h1>Selamat Datang</h1>
-      <p>Masuk menggunakan akun pilihanmu</p>
+      <h1>Selamat datang di <span style="color:#16a34a;">JASTIPASG</span></h1>
+      <p>Silahkan login menggunakan akun pilihanmu</p>
 
       <div class="login-buttons">
-        <button class="login-btn google">
-          <span class="icon">🌐</span>
-          Masuk dengan Google
+        <button class="login-btn" onclick="window.location.href='dasborad.html'">
+          <i class="fas fa-envelope icon"></i> Masuk dengan Email
         </button>
-
-        <button class="login-btn fb">
-          <span class="icon">📘</span>
-          Masuk dengan Facebook
+        <button class="login-btn" onclick="window.location.href='dasborad.html'">
+          <i class="fas fa-phone icon"></i> Masuk dengan WhatsApp
         </button>
       </div>
 
-      <div class="terms">
-        Dengan masuk, kamu menyetujui <a href="#">Syarat & Ketentuan</a> serta <a href="#">Kebijakan Privasi</a>.
-      </div>
-
-      <div class="signup">
-        Belum punya akun? <a href="#">Daftar Sekarang</a>
-      </div>
+      <p class="terms">Dengan melanjutkan, kamu menyetujui <a href="#">syarat & ketentuan</a> kami.</p>
     </div>
   </div>
 
