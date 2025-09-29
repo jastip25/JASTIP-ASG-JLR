@@ -12,71 +12,67 @@ document.getElementById("loginForm")?.addEventListener("submit", function(e){
   }
 });
 
-// ===== CEK RESI DUMMY =====
-function cekResi(){
-  let resi = document.getElementById("resi").value.trim();
-  let hasil = document.getElementById("hasil");
-  if(resi === ""){
-    hasil.innerHTML = "⚠️ Nomor resi belum diisi!";
-  } else {
-    hasil.innerHTML = `
-      <ul>
-        <li>Status: Barang sedang diproses ✅</li>
-        <li>Ekspedisi: JNE</li>
-        <li>Waktu: 28 September 2025</li>
-      </ul>`;
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbzQV2hLndngk8aLb3lJRcOfYrUmhMHMDjQ-ulv1TLtuvbu53gIPaWKzJjZbIKvTOhPI/exec";
+
+document.getElementById('form-cek-resi').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const nomorResi = document.getElementById('input-resi').value.trim();
+  const hasilEl = document.getElementById('hasil');
+
+  if (!nomorResi) return;
+
+  hasilEl.innerHTML = `<p class="text-center text-gray-500">🔄 Mengecek...</p>`;
+
+  try {
+    const res = await fetch(`${ENDPOINT}?resi=${encodeURIComponent(nomorResi)}`);
+    const data = await res.json();
+    renderHasil(data);
+  } catch (err) {
+    hasilEl.innerHTML = `<p class="text-red-600 text-center">❌ Terjadi kesalahan: ${err}</p>`;
   }
-}
+});
 
-// ===== LACAK RESI VIA WEB APP =====
-async function lacakResi() {
-  const resi = document.getElementById("resiInput").value.trim();
-  const hasilEl = document.getElementById("hasilResi");
+function renderHasil(data) {
+  const hasilEl = document.getElementById('hasil');
 
-  if (!resi) {
-    alert("Masukkan nomor resi dulu!");
+  if (data.status === "error" || !data.data) {
+    hasilEl.innerHTML = `<p class="text-center text-red-600">❌ ${data.message || "Nomor resi tidak ditemukan"}</p>`;
     return;
   }
 
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwYKVBwGkNzz96UgWcTSGgQbFv5jMfaQ2T8zpZQqx_VvL-ZFRKE14rBNIKleIywDG5H/exec";
+  const info = data.data.data || {};
+  const history = info.history || [];
 
-  hasilEl.innerHTML = "<p>🔎 Mencari data resi...</p>";
+  // Status utama
+  const statusTerbaru = history.length > 0 ? history[0] : { desc: 'Tidak ada data' };
 
-  try {
-    const resp = await fetch(`${WEB_APP_URL}?resi=${encodeURIComponent(resi)}`);
-    const data = await resp.json();
+  let html = `
+    <div class="mb-4 text-center">
+      <h2 class="text-xl font-bold">${info.courier || '-'}</h2>
+      <p class="text-gray-600">${info.no || ''}</p>
+      <p class="mt-2 text-lg font-semibold text-green-600">${statusTerbaru.desc}</p>
+    </div>
+  `;
 
-    if (!data || data.error || data.status === "error") {
-      const msg = data?.error || data?.message || "Resi tidak ditemukan atau terjadi kesalahan.";
-      hasilEl.innerHTML = `<p style="color:red">❌ ${msg}</p>`;
-      return;
-    }
+  // Timeline perjalanan paket
+  if (history.length > 0) {
+    html += `<div class="border-l-2 border-gray-300 pl-4">`;
+    history.forEach(item => {
+      html += `
+        <div class="mb-4">
+          <div class="text-sm text-gray-500">${item.date}</div>
+          <div class="font-medium">${item.desc}</div>
+          <div class="text-gray-500">${item.location || ''}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  } else {
+    html += `<p class="text-center text-gray-500">Tidak ada riwayat pengiriman</p>`;
+  }
 
-    let summary = null;
-    let manifest = null;
-
-    if (data.data && data.data.summary) {
-      summary = data.data.summary;
-      manifest = data.data.manifest || [];
-    } else {
-      summary = {
-        status: data.status || data.data?.status || "-",
-        courier_name: data.data?.courier || data.courier || "-",
-        waybill: data.data?.waybill || data.waybill || resi,
-        estimated_delivery: data.data?.estimated_delivery || data.estimated_delivery || data.eta || "-"
-      };
-      manifest = data.history || data.manifest || data.data?.history || [];
-    }
-
-    let out = `
-      <div class="card">
-        <p><b>Nomor Resi:</b> ${summary.waybill || resi}</p>
-        <p><b>Kurir:</b> ${summary.courier_name || "-"}</p>
-        <p><b>Status terakhir:</b> ${summary.status || "-"}</p>
-        <p><b>Estimasi sampai:</b> ${summary.estimated_delivery || "-"}</p>
-        <hr>
-        <h4>Riwayat Perjalanan</h4>
-    `;
+  hasilEl.innerHTML = html;
+}
 
     if (Array.isArray(manifest) && manifest.length) {
       out += `<ul class="manifest">`;
