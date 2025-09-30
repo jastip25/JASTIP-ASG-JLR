@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil User - JastipASG</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f6fa;
+    }
+
+    /* Header */
+    header {
+      background: #6A0DAD;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Info user */
+    .profile {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #6A0DAD;
+    }
+    .profile h2 {
+      margin: 15px 0 5px;
+    }
+    .profile p {
+      color: gray;
+      font-size: 14px;
+    }
+
+    /* Menu utama (grid) */
+    .menu {
+      margin: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .menu-item {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item svg {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 10px;
+      color: #6A0DAD;
+    }
+    .menu-item p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Menu tambahan (list) */
+    .extra-menu {
+      margin: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .extra-item {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .extra-item:last-child {
+      border-bottom: none;
+      color: red;
+      font-weight: bold;
+    }
+    .extra-item:hover {
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>👤 Profil Saya</header>
+
+  <!-- Info User -->
+  <div class="profile">
+    <img src="https://via.placeholder.com/100" alt="Foto Profil">
+    <h2>Muhammad Mulyadi</h2>
+    <p>0812-7322-2144</p>
+  </div>
+
+  <!-- Menu Utama (Grid) -->
+  <div class="menu">
+    <div class="menu-item">
+      <!-- Ikon User -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg>
+      <p>Lihat User</p>
+    </div>
+
+    <div class="menu-item">
+      <!-- Ikon Pesanan -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1h1.11l.401 1.607L3.89 9h8.22l1.879-6.393A.5.5 0 0 1 14.5 2h1a.5.5 0 0 1 0 1h-.61l-1.89 6.422a1.5 1.5 0 0 1-1.44 1.078H3.44a1.5 1.5 0 0 1-1.44-1.078L.61 2.607A.5.5 0 0 1 .5 2h-.61a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+      <p>Pesanan</p>
+    </div>
+
+    <div class="menu-item">
+      <!-- Ikon Tracking -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0a5 5 0 0 0-5 5c0 1.657 1.57 4.232 4.434 7.933a.5.5 0 0 0 .772 0C11.43 9.232 13 6.657 13 5a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+      </svg>
+      <p>Tracking Resi</p>
+    </div>
+
+    <div class="menu-item">
+      <!-- Ikon Laporan -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5z"/>
+      </svg>
+      <p>Laporan</p>
+    </div>
+  </div>
+
+  <!-- Menu Tambahan -->
+  <div class="extra-menu">
+    <div class="extra-item">⚙️ Pengaturan</div>
+    <div class="extra-item">📄 Syarat & Ketentuan</div>
+    <div class="extra-item">📞 Bantuan</div>
+    <div class="extra-item" onclick="window.location.href='login.html'">🚪 Logout</div>
+  </div>
+
+</body>
+</html>
