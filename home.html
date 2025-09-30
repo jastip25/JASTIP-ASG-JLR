@@ -3,59 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="style/style.css">
+  <title>Aplikasi JASTIPASG</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #5f2eea, #7b61ff);
+      padding: 20px;
+      color: white;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .saldo-card h3 { margin: 0; font-size: 18px; }
+    .saldo-card p { margin: 3px 0; font-size: 14px; opacity: 0.8; }
+    .saldo-card h1 { margin: 5px 0; font-size: 32px; }
+    .points-btn {
+      background: white;
+      color: #5f2eea;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 15px;
+    }
+
+    .menu-item {
+      background: white;
+      padding: 15px 10px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 13px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .menu-item:hover { transform: scale(1.05); }
+    .menu-item svg { width: 28px; height: 28px; margin-bottom: 6px; fill: #5f2eea; }
+
+    .tips { padding: 15px; }
+    .tips h2 { font-size: 16px; margin-bottom: 10px; }
+    .tips-cards {
+      display: flex;
+      gap: 10px;
+    }
+    .card {
+      flex: 1;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #5f2eea;
+      font-size: 12px;
+      text-align: center;
+    }
+    .navbar svg {
+      display: block;
+      margin: auto;
+      width: 24px;
+      height: 24px;
+      fill: #5f2eea;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header Saldo -->
-  <div class="header-saldo">
-    <h2>Gopay Dashboard</h2>
-    <p>Saldo Anda</p>
-    <h1 class="saldo">Rp 1.250.000</h1>
-    <div class="saldo-buttons">
-      <button class="btn-primary">Top Up</button>
-      <button class="btn-secondary">Bayar</button>
+  <!-- Header saldo -->
+  <header class="header">
+    <div class="saldo-card">
+      <h3>JASTIPASG Cash</h3>
+      <p>Total Saldo</p>
+      <h1>Rp 0</h1>
+      <button class="points-btn">JASTIPASG Points</button>
     </div>
-  </div>
+  </header>
 
-  <!-- Menu Cepat -->
-  <div class="quick-menu">
-    <a href="#" class="menu-item">
-      <img src="assets/images/send.png" alt="Send">
-      <span>Kirim</span>
-    </a>
-    <a href="#" class="menu-item">
-      <img src="assets/images/qr.png" alt="QR">
-      <span>QR Pay</span>
-    </a>
-    <a href="#" class="menu-item">
-      <img src="assets/images/history.png" alt="History">
-      <span>Riwayat</span>
-    </a>
-    <a href="#" class="menu-item">
-      <img src="assets/images/voucher.png" alt="Voucher">
-      <span>Voucher</span>
-    </a>
-  </div>
+  <!-- Menu utama -->
+  <section class="menu">
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm0-16c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7 3.134-7 7-7z"/></svg>
+      Nabung
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
+      Pinjaman
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 20a9 9 0 1 1 9-9a9.01 9.01 0 0 1-9 9z"/><path d="M11 6h2v12h-2z"/></svg>
+      Uang Elektronik
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      Angsuran
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2v2h12V2h2v20h-2v-2H6v2H4V2h2zm0 4v12h12V6H6z"/></svg>
+      Pulsa
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2v10h5l-6 9V11H7l6-9z"/></svg>
+      PLN
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-10 10a10 10 0 0 0 20 0a10 10 0 0 0-10-10zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>
+      PDAM
+    </div>
+    <div class="menu-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM5 19V5h14v14H5z"/></svg>
+      Internet
+    </div>
+  </section>
 
-  <!-- Transaksi Terbaru -->
-  <div class="card">
-    <h3>Transaksi Terbaru</h3>
-    <ul class="transaction-list">
-      <li><span>Pembayaran Listrik</span><span>- Rp 150.000</span></li>
-      <li><span>Transfer ke Budi</span><span>- Rp 200.000</span></li>
-      <li><span>Penerimaan Gaji</span><span>+ Rp 2.500.000</span></li>
-    </ul>
-  </div>
+  <!-- Tips -->
+  <section class="tips">
+    <h2>Kenali JASTIPASG Lebih Dekat</h2>
+    <div class="tips-cards">
+      <div class="card">Keuntungan Pakai JASTIPASG</div>
+      <div class="card">Cara Top Up</div>
+      <div class="card">Upgrade Premier</div>
+    </div>
+  </section>
 
-  <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <a href="home.html" class="active"><span>Home</span></a>
-    <a href="#"><span>Riwayat</span></a>
-    <a href="#"><span>Voucher</span></a>
-    <a href="#"><span>Profile</span></a>
-  </div>
+  <!-- Navbar bawah -->
+  <nav class="navbar">
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3l9 9-1.5 1.5L12 6l-7.5 7.5L3 12z"/></svg>
+      Home
+    </a>
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5a6.5 6.5 0 0 1 13 0c0 3.78-3.4 6.86-8.55 11.54z"/></svg>
+      Finance
+    </a>
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l4 4h-3v7h-2V6H8l4-4zM4 20h16v2H4z"/></svg>
+      Pay
+    </a>
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+      Inbox
+    </a>
+    <a href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5a5 5 0 0 0 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg>
+      Profile
+    </a>
+  </nav>
 
+  <script>
+    // Interaksi sederhana
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', () => {
+        alert("Kamu klik menu: " + item.innerText);
+      });
+    });
+  </script>
 </body>
 </html>
