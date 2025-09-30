@@ -182,3 +182,16 @@ footer {
   font-weight: bold;
   text-decoration: none;
 }
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contoh Halaman</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .card {
+      width: 90%;       /* fleksibel terhadap layar */
+      max-width: 600px; /* tetap nyaman di desktop */
+      margin: 16px auto;
+    }
+  </style>
+</head>
