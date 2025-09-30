@@ -4,17 +4,69 @@
   <meta charset="UTF-8">
   <title>Admin Panel</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 60px; /* ruang untuk navbar */
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      padding: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #f4f4f4;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #6A0DAD;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      text-align: center;
+      flex: 1;
+    }
+    .navbar a:hover {
+      background: #520A9E;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h2>🔑 Admin Panel Jastip ASG</h2>
     <ul>
-      <li>Lihat User Terdaftar</li>
-      <li>Lihat Pesanan Masuk</li>
-      <li>Tracking Resi Massal</li>
-      <li>Download Laporan (CSV/PDF)</li>
+      <li>👥 Lihat User Terdaftar</li>
+      <li>📦 Lihat Pesanan Masuk</li>
+      <li>📮 Tracking Resi Massal</li>
+      <li>📑 Download Laporan (CSV/PDF)</li>
     </ul>
-    <a href="dashboard.html">⬅️ Kembali</a>
+  </div>
+
+  <!-- Navbar bawah -->
+  <div class="navbar">
+    <a href="dashboard.html">🏠 Kembali</a>
+    <a href="finance.html">💰 Finance</a>
+    <a href="pay.html">🔗 Pay</a>
+    <a href="inbox.html">📩 Inbox</a>
+    <a href="admin.html">👤 Profil</a>
   </div>
 </body>
 </html>
